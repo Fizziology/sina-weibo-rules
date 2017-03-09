@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sina-weibo-rules/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "gnip-rules"
-  spec.version       = Gnip::VERSION
+  spec.name          = "sina-weibo-rules"
+  spec.version       = SinaWeibo::VERSION
   spec.authors       = ["Spencer Markowski", "The Able Few"]
   spec.email         = ["spencer@theablefew.com"]
   spec.description   = "Remove, Add and List your Sina Weibo Rules"

@@ -47,7 +47,7 @@ module SinaWeibo
               username: omg@omg.com
               password: your_password
               account: your_account
-              streaming_url: 'https://stream.sina-weibo.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod/'
+              streaming_url: 'https://api.socialgist.com/keywordapi/YOUR_ACCOUNT/sinaweibo/main'
 
         RUBY
         )
