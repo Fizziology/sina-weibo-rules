@@ -2,14 +2,14 @@ require 'active_support'
 require 'httparty'
 require 'json'
 
-require 'gnip-rules/api'
-require 'gnip-rules/response'
-require 'gnip-rules/rule'
+require 'sina-weibo-rules/api'
+require 'sina-weibo-rules/response'
+require 'sina-weibo-rules/rule'
 
-module Gnip
+module SinaWeibo
   class Rules
     include HTTParty
-    include Gnip::API
+    include SinaWeibo::API
 
     headers 'Accept' => 'application/json', 'Content-Type' => 'application/json'
     format :json
@@ -41,13 +41,13 @@ module Gnip
          @config = YAML.load_file( @configuration_file )[environment.to_s]
       else
         raise Exception.new( <<-RUBY
-          You must provide a configuration file at config/gnip.yml
+          You must provide a configuration file at config/sina-weibo.yml
 
             development: &development
               username: omg@omg.com
               password: your_password
               account: your_account
-              streaming_url: 'https://stream.gnip.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod/'
+              streaming_url: 'https://stream.sina-weibo.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod/'
 
         RUBY
         )

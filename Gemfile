@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'httparty', '>= 0'
 gem 'rake'
 gem 'json'
-gem 'activesupport', '>= 3.1.3'
+gem 'activesupport', '>= 4.0'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

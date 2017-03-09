@@ -1,6 +1,6 @@
 include Forwardable
 
-module Gnip
+module SinaWeibo
   class Response
     extend Forwardable
 

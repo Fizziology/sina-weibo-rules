@@ -1,4 +1,4 @@
-module Gnip
+module SinaWeibo
   class Rule
 
     attr_accessor :value, :tag, :errors

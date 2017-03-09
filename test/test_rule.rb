@@ -1,10 +1,10 @@
 require 'helper'
 
 class TestRule < Test::Unit::TestCase
-  context "Gnip Rules" do 
+  context "SinaWeibo Rules" do 
     context "without tags" do
       setup do 
-        @rule = Gnip::Rule.new( '"bangor slov"')
+        @rule = SinaWeibo::Rule.new( '"bangor slov"')
       end
 
       should "allow creation of quoted rule" do
@@ -25,7 +25,7 @@ class TestRule < Test::Unit::TestCase
 
     context "with more than 10 phrases" do
       setup do
-        @rule = Gnip::Rule.new('mirror mirror clip -watch -see -project -mirror -relativity -armie -julia -lily -trailer -movie' )
+        @rule = SinaWeibo::Rule.new('mirror mirror clip -watch -see -project -mirror -relativity -armie -julia -lily -trailer -movie' )
       end
 
       should "raise an invalid length error" do
@@ -35,7 +35,7 @@ class TestRule < Test::Unit::TestCase
 
     context "with tags" do
       setup do
-        @rule = Gnip::Rule.new( "gorgon" , "scary" )
+        @rule = SinaWeibo::Rule.new( "gorgon" , "scary" )
       end
 
       should "convert to json" do

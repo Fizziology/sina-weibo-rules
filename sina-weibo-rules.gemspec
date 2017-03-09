@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gnip-rules/version'
+require 'sina-weibo-rules/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "gnip-rules"
   spec.version       = Gnip::VERSION
   spec.authors       = ["Spencer Markowski", "The Able Few"]
   spec.email         = ["spencer@theablefew.com"]
-  spec.description   = "Remove, Add and List your Gnip Rules"
-  spec.summary       = "A simple wrapper for the Gnip Rules API"
+  spec.description   = "Remove, Add and List your Sina Weibo Rules"
+  spec.summary       = "A simple wrapper for the Sina Weibo Rules API"
 
-  spec.homepage      = "http://github.com/theablefew/gnip-rules"
+  spec.homepage      = "http://github.com/theablefew/sina-weibo-rules"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
