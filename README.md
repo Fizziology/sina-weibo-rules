@@ -1,80 +1,80 @@
-# gnip-rules
+# sina-weibo-rules
 
-Provides a quick and easy way to manage your rules via Gnip Rules API. 
+Provides a quick and easy way to manage your rules via sina-weibo Rules API. 
 
 ## Installation
 
 ```ruby
- gem 'gnip-rules'
+ gem 'sina-weibo-rules'
 ```
 
 ## Configuration
 
-There are two ways you can provide credentials to the gnip-api gem. 
+There are two ways you can provide credentials to the sina-weibo-api gem. 
 
 * Pass them to the initialize method
 
-  `Gnip::Rules.new( "chieflarl@larlbang.com", "larl!operator" ,'https://stream.gnip.com/.../YOUR_ACCOUNT/.../prod' )`
+  `sina-weibo::Rules.new( "chieflarl@larlbang.com", "larl!operator" ,'https://stream.sina-weibo.com/.../YOUR_ACCOUNT/.../prod' )`
 
-* Via a configuration file at config/gnip.yml 
+* Via a configuration file at config/sina-weibo.yml 
 
 ```yaml
  development: &development
    username: chieflarl@larlbang.com
    password: larl!operator 
-   streaming_url:'https://stream.gnip.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod'
+   streaming_url:'https://stream.sina-weibo.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod'
 ```
 
 ## Usage
 
 ```ruby
- @gnip_rules = Gnip::Rules.new
+ @sina-weibo_rules = sina-weibo::Rules.new
 ```
 
 ### Adding
 
 ```ruby
-  rules = [Gnip::Rule.new "larl -bang", Gnip::Rule.new "#larloperator", Gnip::Rule.new "larlygag" , "some_tag"]
-  response = @gnip_rules.add( rules )
+  rules = [sina-weibo::Rule.new "larl -bang", sina-weibo::Rule.new "#larloperator", sina-weibo::Rule.new "larlygag" , "some_tag"]
+  response = @sina-weibo_rules.add( rules )
   p response #=> 201 Created
 ```
 
 ### Removing
 
 ```ruby
-  rules = [Gnip::Rule.new "larl -bang", Gnip::Rule.new "#larloperator"]
-  response = @gnip_rules.remove( rules )
+  rules = [sina-weibo::Rule.new "larl -bang", sina-weibo::Rule.new "#larloperator"]
+  response = @sina-weibo_rules.remove( rules )
   p response #=> 200 OK
 ```
 
 ### Listing
 
 ```ruby
-  response = @gnip_rules.list.rules
+  response = @sina-weibo_rules.list.rules
   p response #=> {"rules": {"value":"larl -bang", "value":"#larloperator"} }
 ```
 
 ### Removing All Rules
 
-This is really just for convienience while testing. You probably shouldn't ever use this in production. This method loads all the rules from gnip and passes them to the remove method. There is a 3 second pause in between the list and delete to avoid rate limiting. 
+This is really just for convienience while testing. You probably shouldn't ever use this in production. This method loads all the rules from sina-weibo and passes them to the remove method. There is a 3 second pause in between the list and delete to avoid rate limiting. 
 
 ```ruby
-  response = @gnip_rules.delete_all!
+  response = @sina-weibo_rules.delete_all!
   p response #=> 200 OK
-  @gnip.list.rules.empty? #=> true
+  @sina-weibo.list.rules.empty? #=> true
 ```
 
 
 
 ## Running Tests
 
-Make sure you have the config file mentioned above at config/gnip.yml
+Make sure you have the config file mentioned above at config/sina-weibo.yml
 
 ```ruby
  rake test
 ```
 
-## Contributing to gnip-rules
+## Contributing to sina-weibo-rules
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
