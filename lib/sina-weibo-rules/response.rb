@@ -45,7 +45,7 @@ module SinaWeibo
     end
 
     def success?
-      ok?
+      ok? && http_party_response.parsed_response.has_key?("result") && http_party_response.parsed_response["result"] == "success"
     end
 
     def error
