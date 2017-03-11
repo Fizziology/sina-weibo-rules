@@ -1,6 +1,7 @@
 require 'active_support'
 require 'httparty'
 require 'json'
+require 'logger'
 
 require 'sina-weibo-rules/api'
 require 'sina-weibo-rules/response'
@@ -11,7 +12,7 @@ module SinaWeibo
     include HTTParty
     include SinaWeibo::API
 
-    headers 'Accept' => 'application/json', 'Content-Type' => 'application/json'
+    headers 'Accept' => 'application/json', 'Content-Type' => 'application/json; charset=utf-8'
     format :json
 
     def initialize( configuration = nil, username = nil, password = nil, uri = nil, timeout = 60 )

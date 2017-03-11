@@ -1,24 +1,18 @@
 module SinaWeibo
   module API
-    def add(rules)
-      options = ActiveSupport::JSON.encode( {:rules => rules} )
-      puts options
-      SinaWeibo::Response.new self.class.post('/keywords.json', :body => options)
+
+    def add( keyword )
+      options = {addAll: {keyword: keyword}}
+      SinaWeibo::Response.new self.class.put('/keywords', body: options.to_json)
     end
 
-    def remove( rules )
-      options = ActiveSupport::JSON.encode( {:rules => rules} )
-      SinaWeibo::Response.new self.class.delete('/keywords.json', :body => options)
+    def remove( keyword )
+      options = {keyword: keyword}
+      SinaWeibo::Response.new self.class.delete('/keywords', query: options)
     end
 
     def list
       SinaWeibo::Response.new self.class.get( '/keywords' )
-    end
-
-    def delete_all!
-      rules = self.list.rules
-      sleep 3
-      self.remove( rules )
     end
 
   end

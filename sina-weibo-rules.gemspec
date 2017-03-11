@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('httparty', '>= 0')
   spec.add_dependency('json', '>= 1.5.1')
-  spec.add_dependency('activesupport', '>= 3.1.3')
+  spec.add_dependency('activesupport', '>= 4.0.0')
 end
 

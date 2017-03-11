@@ -13,7 +13,7 @@ module SinaWeibo
     end
 
     def rules
-      http_party_response["rules"]
+      http_party_response.parsed_response
     end
 
     def created?

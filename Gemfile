@@ -5,6 +5,7 @@ gem 'httparty', '>= 0'
 gem 'rake'
 gem 'json'
 gem 'activesupport', '>= 4.0'
+gem 'logger'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
