@@ -49,7 +49,7 @@ module SinaWeibo
     end
 
     def error
-      http_party_response["error"]
+      http_party_response.parsed_response["result"]
     end
 
   end
