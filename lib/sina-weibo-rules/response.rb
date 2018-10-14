@@ -13,7 +13,7 @@ module SinaWeibo
     end
 
     def rules
-      http_party_response.parsed_response
+      http_party_response.parsed_response["message"]["query"]
     end
 
     def created?
@@ -45,11 +45,11 @@ module SinaWeibo
     end
 
     def success?
-      ok? && http_party_response.parsed_response.has_key?("result") && http_party_response.parsed_response["result"] == "success"
+      ok? && http_party_response.parsed_response.has_key?("status") && http_party_response.parsed_response["status"] == "success"
     end
 
     def error
-      http_party_response.parsed_response["result"]
+      http_party_response.parsed_response
     end
 
   end

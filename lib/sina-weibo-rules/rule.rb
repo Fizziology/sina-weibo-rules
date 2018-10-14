@@ -10,7 +10,7 @@ module SinaWeibo
     end
 
     def as_json(options={})
-      o = {"value" => value}
+      o = {"query" => value}
       o.merge!( "tag" => tag ) unless tag.nil?
       return o
     end
